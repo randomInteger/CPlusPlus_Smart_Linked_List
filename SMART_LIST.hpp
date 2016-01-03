@@ -210,7 +210,7 @@ bool LinkedList<T>::remBack(T *value) {
     //do the removal
     auto remove = std::move(prev->_next);
     _tail = prev;
-    current = nullptr;
+    current.reset();
     
     //decrement the number of nodes
     _count--;
