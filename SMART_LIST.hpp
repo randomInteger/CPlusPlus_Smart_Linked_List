@@ -16,7 +16,6 @@
 template <typename T>
 class LinkedList {
 private:
-    
     //Definition for Node class
     class Node {
         friend class LinkedList<T>;
@@ -42,7 +41,7 @@ public:
     ~LinkedList() = default;
     
     //All public methods below return false on error,
-    //except for checkEmpty.
+    //except for checkEmpty and searchByKey.
     
     //Return true if the list is empty
     bool checkEmpty ();
@@ -136,7 +135,6 @@ bool LinkedList<T>::searchByKey(T key) {
         if(current->_key == key) return true;
         current = current->_next;
     }
-    
     return false;
 }
 
@@ -178,7 +176,6 @@ bool LinkedList<T>::remFront(T *value) {
     
     //decrement the number of nodes
     _count--;
-    
     return true;
 }
 
@@ -214,7 +211,6 @@ bool LinkedList<T>::remBack(T *value) {
     
     //decrement the number of nodes
     _count--;
-    
     return true;
 }
 
@@ -304,7 +300,6 @@ bool LinkedList<T>::removeIndex(int index){
     current.reset();
     _count--;
     return true;
-    
 }
 
 template <typename T>
